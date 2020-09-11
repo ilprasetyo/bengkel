@@ -76,7 +76,7 @@ window.onload=function(){
 				
 				  <div class="form-group">
 				    <label for="id_sparepart">Sparepart</label>
-				    <select class="form-control" id="id_sparepart" name="sparepart">
+				    <select class="form-control" id="id_sparepart" name="sparepart" multiple>
 					<?php
 					$mysqli = new mysqli("localhost","root","","project213");
 					$result = $mysqli -> query("SELECT * FROM 213_sparepart where stock > 0"); 
@@ -91,23 +91,6 @@ window.onload=function(){
 					$i++;
 					}
 					?>
-					</select>
-
-				    <select class="form-control" id="id_sparepart" name="sparepart">
-					<?php
-					$mysqli = new mysqli("localhost","root","","project213");
-					$result = $mysqli -> query("SELECT * FROM 213_sparepart where stock > 0"); 
-					?>
-					<?php
-					$i=0;
-					while($row = mysqli_fetch_array($result)) {
-					?>
-					
-					<option value="<?=$row["id_sparepart"];?>"><?=$row["sparepart"];?></option>
-					<?php
-					$i++;
-					}
-					?> 
 					</select>
 				  </div>
 				  <div class="form-group">
