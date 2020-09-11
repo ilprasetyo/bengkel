@@ -62,20 +62,20 @@ tbody tr:nth-child(odd) {
 <table >
 <thead>
 <tr>
-<th>Nama Mekanik</td>
-<th>Sparepart</td>
-<th>Qty</td>
-<th>Harga Sparepart</td>
-<th>Harga Jasa</td>
-<th>Jumlah</td>
-<th>Tanggal</td>
+<th>Nama Mekanik</th>
+<th>Sparepart</th>
+<th>Qty</th>
+<th>Harga Sparepart</th>
+<th>Harga Jasa</th>
+<th>Jumlah</th>
+<th>Tanggal</th>
 
 
 </tr>
 </thead>
 <?php 
 $result = $mysqli -> query("SELECT * FROM 213_pembelian JOIN 213_mekanik ON 213_pembelian.id_mekanik=213_mekanik.id_mekanik JOIN 213_sparepart ON 213_pembelian.id_sparepart=213_sparepart.id_sparepart ORDER BY id_pembelian ASC"); 
-// $sql=mysql_query("");
+$sql=mysql_query("");
 while($data=mysqli_fetch_assoc($sql)){
 ?>
 <tbody><tr>
