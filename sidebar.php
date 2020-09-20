@@ -27,7 +27,7 @@
 			  <div class="panel-body">
 			    <ul class="nav nav-pills nav-stacked">
 				  <li role="presentation"><a href="pembelian.php"><span class="fa fa-wrench"></span> Data Service</a></li>
-				  <li role="presentation"><a href="laporan-penjualan.php" target="_blank"><span class="fa fa-file-pdf-o"></span> Laporan Transaksi</a></li>
+				  <li role="presentation"><a href="laporan_penjualan.php" target="_blank"><span class="fa fa-file-pdf-o"></span> Laporan Transaksi</a></li>
 				</ul>
 			  </div>
 			</div>
