@@ -29,6 +29,8 @@ class Pembelian{
 		$stmt->bindParam(3, $this->qty);
 		$stmt->bindParam(4, $this->harga_jasa);
 		$stmt->bindParam(5, $this->tgl_beli);
+		
+		$id_sparepart= $this->id_sparepart;
 
 		// var_dump($this->id_mekanik);die;
 		$id = $this->id_sparepart;
@@ -46,21 +48,14 @@ class Pembelian{
 		// var_dump($hasil_qty);die;
 
 		$query3 = $mysqli -> query("UPDATE 213_sparepart SET stock='$hasil_qty' WHERE id_spareapart='$this->id_sparepart'");
-
-		// if ($query3) {
-		// 	echo "berhasil";
+		
+		// if($stmt->execute()){
+		// 	return true;
 		// }else{
-		// 	echo "gagal update";
+		// 	return false;
 		// }
-
-
 		
-		if($stmt->execute()){
-			return true;
-		}else{
-			return false;
-		}
-		
+
 	}
 	
 	

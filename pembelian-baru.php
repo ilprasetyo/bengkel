@@ -1,7 +1,6 @@
 <?php
 include_once 'header.php';
 if($_POST){
-	
 	include_once 'includes/pembelian.inc.php';
 	$eks = new Pembelian($db);
 
@@ -11,9 +10,9 @@ if($_POST){
 	$eks->harga_jasa = $_POST['harga_jasa'];
 	$eks->tgl_beli = $_POST['tgl_beli'];
 	
-	
 	if($eks->insert()){
-?>
+		
+		?>
 <script type="text/javascript">
 window.onload=function(){
 	showStickySuccessToast();

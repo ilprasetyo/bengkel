@@ -39,8 +39,7 @@ include_once 'includes/config.php';
 							<td>".$row["qty"]."</td>
 							<td>".$row["harga"]."</td>
 							<td>".$row["harga_jasa"]."</td>
-							<td>". 
-									$tot ."</td>
+							<td>".$tot."</td>
 							<td>".$row["tgl_beli"]."</td>
 						 </tr>";
 			}
