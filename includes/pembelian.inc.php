@@ -30,6 +30,30 @@ class Pembelian{
 		$stmt->bindParam(4, $this->harga_jasa);
 		$stmt->bindParam(5, $this->tgl_beli);
 
+		// var_dump($this->id_mekanik);die;
+		$id = $this->id_sparepart;
+		// var_dump($id);die;
+		$mysqli = new mysqli("localhost","root","","project213");
+		$query2 = $mysqli -> query("select stock from 213_sparepart where id_sparepart = '$id'");
+		// $data  = mysqli_fetch_row($query2);
+		$data_stok = mysqli_fetch_row($query2); 
+		$intstok = (int)$data_stok[0];
+		// var_dump($intstok); die; 
+		$qtybeli = $this->qty;
+		$intqty = (int)$qtybeli;
+		// var_dump($intqty);die;
+		$hasil_qty = $intstok - $intqty;
+		// var_dump($hasil_qty);die;
+
+		$query3 = $mysqli -> query("UPDATE 213_sparepart SET stock='$hasil_qty' WHERE id_spareapart='$this->id_sparepart'");
+
+		// if ($query3) {
+		// 	echo "berhasil";
+		// }else{
+		// 	echo "gagal update";
+		// }
+
+
 		
 		if($stmt->execute()){
 			return true;
