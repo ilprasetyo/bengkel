@@ -21,13 +21,17 @@ include_once 'includes/config.php';
 				<th>Qty</th>
 				<th>Harga Sparepart</th>
 				<th>Harga Jasa</th>
+				<th>Jumlah</th>
 				<th>Tanggal</th>
 			</tr>";
 
 			$no = 1;
 			$sql = mysqli_query($con,"SELECT * FROM 213_pembelian JOIN 213_mekanik ON 213_pembelian.id_mekanik=213_mekanik.id_mekanik JOIN 213_sparepart ON 213_pembelian.id_sparepart=213_sparepart.id_sparepart ORDER BY id_pembelian ASC");
 			while($row=mysqli_fetch_array($sql)){
-				
+				$hs= $row["harga"];
+								   $qt= $row["qty"];
+								   $hj= $row["harga_jasa"];
+								   $tot = ($hs * $qt) + $hj;
 			$content .= "<tr>
 							<td>".$no++."</td>
 							<td>".$row["nama_mekanik"]."</td>
@@ -35,6 +39,8 @@ include_once 'includes/config.php';
 							<td>".$row["qty"]."</td>
 							<td>".$row["harga"]."</td>
 							<td>".$row["harga_jasa"]."</td>
+							<td>". 
+									$tot ."</td>
 							<td>".$row["tgl_beli"]."</td>
 						 </tr>";
 			}
